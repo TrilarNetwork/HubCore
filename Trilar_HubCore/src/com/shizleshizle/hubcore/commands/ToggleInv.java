@@ -7,7 +7,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import com.shizleshizle.hubcore.utils.LobbyHandler;
+import com.shizleshizle.hubcore.utils.LH;
 
 import me.shizleshizle.core.objects.User;
 import me.shizleshizle.core.permissions.Perm;
@@ -25,23 +25,23 @@ public class ToggleInv implements CommandExecutor {
 				User p = new User(x);
 				if (Perm.hasPerm(p, PermGroup.MEMBER)) {
 					if (args.length == 0) {
-						if (LobbyHandler.isDisabled(p)) {
-							LobbyHandler.enableInventory(p);
+						if (LH.isDisabled(p)) {
+							LH.enableInventory(p);
 							p.sendMessage(prefix + "Your inventory has been enabled!");
 						} else {
-							LobbyHandler.disableInventory(p);
+							LH.disableInventory(p);
 							p.sendMessage(prefix + "Your inventory has been disabled!");
 						}
 					} else if (args.length == 1) {
 						Player p2 = Bukkit.getPlayerExact(args[0]);
 						if (p2.isOnline()) {
 							User t = new User(p2);
-							if (LobbyHandler.isDisabled(t)) {
-								LobbyHandler.enableInventory(t);
+							if (LH.isDisabled(t)) {
+								LH.enableInventory(t);
 								p.sendMessage(prefix + "You have enabled " + ChatColor.GOLD + t.getName() + ChatColor.YELLOW + "'s inventory!");
 								t.sendMessage(prefix + "Your inventory has been enabled by " + ChatColor.GOLD + p.getName() + ChatColor.YELLOW + "!");
 							} else {
-								LobbyHandler.disableInventory(t);
+								LH.disableInventory(t);
 								p.sendMessage(prefix + "You have disabled " + ChatColor.GOLD + t.getName() + ChatColor.YELLOW + "'s inventory!");
 								t.sendMessage(prefix + "Your inventory has been disabled by " + ChatColor.GOLD + p.getName() + ChatColor.YELLOW + "!");
 							}

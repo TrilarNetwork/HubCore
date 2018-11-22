@@ -5,7 +5,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 
-import com.shizleshizle.hubcore.utils.LobbyHandler;
+import com.shizleshizle.hubcore.utils.LH;
 
 import me.shizleshizle.core.objects.User;
 
@@ -15,7 +15,7 @@ public class FChange  implements Listener {
 	public void onFoodChange(FoodLevelChangeEvent e) {
 		if (e.getEntity() instanceof Player) {
 			User p = new User((Player) e.getEntity());
-			if (LobbyHandler.isDisabled(p)) {
+			if (LH.isDisabled(p)) {
 				e.setCancelled(true);
 			}
 		}

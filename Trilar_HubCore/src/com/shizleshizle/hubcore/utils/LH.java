@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import me.shizleshizle.core.objects.User;
 
-public class LobbyHandler {
+public class LH {
 	private static ArrayList<String> inv = new ArrayList<>();
 	
 	public static void enableInventory(User p) {

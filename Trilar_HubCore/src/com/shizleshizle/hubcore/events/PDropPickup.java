@@ -5,7 +5,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerPickupItemEvent;
 
-import com.shizleshizle.hubcore.utils.LobbyHandler;
+import com.shizleshizle.hubcore.utils.LH;
 
 import me.shizleshizle.core.objects.User;
 
@@ -14,7 +14,7 @@ public class PDropPickup  implements Listener {
 	@EventHandler
 	public void onDrop(PlayerDropItemEvent e) {
 		User p = new User(e.getPlayer());
-		if (LobbyHandler.isDisabled(p)) {
+		if (LH.isDisabled(p)) {
 			e.setCancelled(true);
 		}
 	}
@@ -22,7 +22,7 @@ public class PDropPickup  implements Listener {
 	@EventHandler
 	public void onPickup(PlayerPickupItemEvent e) {
 		User p = new User(e.getPlayer());
-		if (LobbyHandler.isDisabled(p)) {
+		if (LH.isDisabled(p)) {
 			e.setCancelled(true);
 		}
 	}

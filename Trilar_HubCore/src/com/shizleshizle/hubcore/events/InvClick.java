@@ -5,7 +5,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 
-import com.shizleshizle.hubcore.utils.LobbyHandler;
+import com.shizleshizle.hubcore.utils.LH;
 
 import me.shizleshizle.core.objects.User;
 
@@ -15,7 +15,7 @@ public class InvClick implements Listener {
 	public void onClick(InventoryClickEvent e) {
 		if (e.getWhoClicked() instanceof Player) {
 			User p = new User((Player) e.getWhoClicked());
-			if (LobbyHandler.isDisabled(p)) {
+			if (LH.isDisabled(p)) {
 				e.setCancelled(true);
 			}
 		}
