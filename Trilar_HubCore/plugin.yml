@@ -1,0 +1,8 @@
+name: Trilar_HubCore
+main: com.shizleshizle.hubcore.Hub
+authors: [shizleshizle, iMelvin]
+depend: [Trilar_Core]
+commands:
+  toggleinv:
+    description: Toggle your inventory
+    aliases: [lobbyinv, lobbyinventory, toggleinventory, togglei, lobbyi]
