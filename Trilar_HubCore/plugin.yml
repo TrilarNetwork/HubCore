@@ -8,3 +8,5 @@ commands:
   toggleinv:
     description: Toggle your inventory
     aliases: [lobbyinv, lobbyinventory, toggleinventory, togglei, lobbyi]
+  disco:
+    description: Toggle disco armor

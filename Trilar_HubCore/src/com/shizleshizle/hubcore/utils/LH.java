@@ -1,13 +1,14 @@
 package com.shizleshizle.hubcore.utils;
 
+import me.shizleshizle.core.objects.User;
+
 import java.util.ArrayList;
 
-import me.shizleshizle.core.objects.User;
 
 public class LH {
 	private static ArrayList<String> inv = new ArrayList<>();
 	private static ArrayList<String> nosee = new ArrayList<>();
-	
+
 	public static void enableInventory(User p) {
 		if (!inv.contains(p.getName())) {
 			inv.add(p.getName());
@@ -15,9 +16,7 @@ public class LH {
 	}
 	
 	public static void disableInventory(User p) {
-		if (inv.contains(p.getName())) {
-			inv.remove(p.getName());
-		}
+		inv.remove(p.getName());
 	}
 	
 	public static boolean isDisabled(User p) {
@@ -31,12 +30,10 @@ public class LH {
 	}
 	
 	public static void showPlayersFor(User p) {
-		if (nosee.contains(p.getName())) {
-			nosee.remove(p.getName());
-		}
+		nosee.remove(p.getName());
 	}
 	
-	public static boolean canSeePlayers(User p) {
+	static boolean canSeePlayers(User p) {
 		return nosee.contains(p.getName());
 	}
 	

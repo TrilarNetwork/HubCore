@@ -2,6 +2,8 @@ package com.shizleshizle.hubcore;
 
 import java.util.logging.Logger;
 
+import com.shizleshizle.hubcore.commands.Disco;
+import com.shizleshizle.hubcore.utils.DiscoRunner;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -27,6 +29,7 @@ public class Hub extends JavaPlugin {
 		l.info("Hub Core >> Enabling...");
 		long t = System.currentTimeMillis();
 		getCommand("toggleinv").setExecutor(new ToggleInv());
+		getCommand("disco").setExecutor(new Disco());
 		PluginManager pm = Bukkit.getPluginManager();
 		pm.registerEvents(new BBreak(), this);
 		pm.registerEvents(new BPlace(), this);
@@ -40,6 +43,8 @@ public class Hub extends JavaPlugin {
 		pm.registerEvents(new PJoin(), this);
 		pm.registerEvents(new PQuit(), this);
 		pm.registerEvents(new WChange(), this);
+		DiscoRunner dr = new DiscoRunner();
+		dr.run();
 		long f = System.currentTimeMillis() - t;
 		l.info("Hub Core >> Enabled! (" + f + " ms)");
 	}
@@ -48,7 +53,6 @@ public class Hub extends JavaPlugin {
 		Logger l = getLogger();
 		l.info("Hub Core >> Disabling...");
 		long t = System.currentTimeMillis();
-		
 		long f = System.currentTimeMillis() - t;
 		l.info("Hub Core >> Disabled! (" + f + " ms)");
 	}

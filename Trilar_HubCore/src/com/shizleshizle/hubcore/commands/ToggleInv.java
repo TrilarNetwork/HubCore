@@ -16,7 +16,7 @@ import me.shizleshizle.core.utils.ErrorMessages;
 import me.shizleshizle.core.utils.ErrorMessages.Messages;
 
 public class ToggleInv implements CommandExecutor {
-	public static String prefix = ChatColor.YELLOW.toString() + ChatColor.BOLD + "Lobby Inventory" + ChatColor.GOLD + " >> " + ChatColor.YELLOW;
+	private static String prefix = ChatColor.YELLOW.toString() + ChatColor.BOLD + "Lobby Inventory" + ChatColor.GOLD + " >> " + ChatColor.YELLOW;
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if (cmd.getName().equalsIgnoreCase("toggleinv")) {

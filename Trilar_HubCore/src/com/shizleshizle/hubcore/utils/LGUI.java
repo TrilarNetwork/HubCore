@@ -1,5 +1,6 @@
 package com.shizleshizle.hubcore.utils;
 
+import com.shizleshizle.hubcore.commands.Disco;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.inventory.Inventory;
@@ -36,8 +37,8 @@ public class LGUI {
 		p.openInventory(i);
 	}
 	
-	public static void openHats(User p) {
-		Inventory i = Bukkit.createInventory(null, 54, ChatColor.GOLD.toString() + ChatColor.BOLD + "Hats Page 1/2");
+	public static void openSkulls(User p) {
+		Inventory i = Bukkit.createInventory(null, 54, ChatColor.GOLD.toString() + ChatColor.BOLD + "Hats Page 1/8");
 		
 		ItemStack notch = Skulls.getSkull("Notch", 1, ChatColor.GOLD + "Notch's Head"); 
 		ItemStack shizle = Skulls.getSkull("shizleshizle", 1, ChatColor.DARK_AQUA + "shizleshizle's Head", ChatColor.GRAY + "Lead-Developer Head"); 
@@ -45,43 +46,70 @@ public class LGUI {
 		ItemStack bradley = Skulls.getSkull("Tvoh19", 1, ChatColor.RED + "Tvoh19's Head", ChatColor.GRAY + "Owner Head");
 		ItemStack guillian = Skulls.getSkull("JrGuillian", 1, ChatColor.YELLOW + "JrGuillian's Head", ChatColor.GRAY + "Admin Head");
 		ItemStack luuk = Skulls.getSkull("LuMaNia", 1, ChatColor.DARK_RED + "LuMaNia's Head", ChatColor.GRAY + "Staff-Lead Head");
-		ItemStack sand = CI.createItem(Material.SAND, 1, -1, "Sand head");
 		
 		ItemStack backToSettings = CI.createItem(Material.WOOD_DOOR, 1, -1, ChatColor.GOLD + "Settings", ChatColor.GRAY + "Click here to go back to settings!");
 		ItemStack close = CI.createItem(Material.REDSTONE_BLOCK, 1, -1, ChatColor.RED + "Close", ChatColor.GRAY + "Click here to close a menu!");
 		ItemStack next = Skulls.getSkull("MHF_ArrowRight", 1, ChatColor.BLACK + "Next Page", ChatColor.GRAY + "Go to the next page!");
-		
+		ItemStack info = CI.createItem(Material.SIGN_POST, 1, -1, ChatColor.GOLD + "Info", ChatColor.GRAY + "This is the menu for skulls.");
+
+		i.setItem(0, info);
 		i.setItem(10, notch);
 		i.setItem(12, shizle);
 		i.setItem(14, melvin);
 		i.setItem(16, bradley);
 		i.setItem(20, guillian);
 		i.setItem(22, luuk);
-		i.setItem(24, sand);
-		// 28, 30, 32, 34, 38, 40, 42
 		i.setItem(49, backToSettings);
 		i.setItem(50, close);
 		i.setItem(53, next);
 		p.openInventory(i);
 	}
-	
-	public static void openHats2(User p) {
-		Inventory i = Bukkit.createInventory(null, 54, ChatColor.GOLD.toString() + ChatColor.BOLD + "Hats Page 2/2");
-		
+
+	public static void openWoodTypes(User p) {
+		Inventory w = Bukkit.createInventory(null, 54, ChatColor.GOLD.toString() + ChatColor.BOLD + "Hats Page 2/8");
+
+		ItemStack oak = CI.createItem(Material.LOG, 1, 0, ChatColor.GOLD + "Oak Wood");
+		ItemStack spruce = CI.createItem(Material.LOG, 1, 1, ChatColor.DARK_GRAY + "Spruce Wood");
+		ItemStack birch = CI.createItem(Material.LOG, 1, 2,ChatColor.WHITE + "Birch Wood");
+		ItemStack jungle = CI.createItem(Material.LOG, 1, 3, ChatColor.GREEN + "Jungle Wood");
+		ItemStack acacia = CI.createItem(Material.LOG_2, 1, 0, ChatColor.RED + "Acacia Wood");
+		ItemStack darkoak = CI.createItem(Material.LOG_2, 1, 1, ChatColor.BLACK + "Dark Oak Wood");
+
+		ItemStack oakp = CI.createItem(Material.WOOD, 1, 0, ChatColor.GOLD + "Oak Wood Planks");
+		ItemStack sprucep = CI.createItem(Material.WOOD, 1, 1, ChatColor.DARK_GRAY + "Spruce Wood Planks");
+		ItemStack birchp = CI.createItem(Material.WOOD, 1, 2, ChatColor.WHITE + "Birch Wood Planks");
+		ItemStack junglep = CI.createItem(Material.WOOD, 1, 3, ChatColor.GREEN + "Jungle Wood Planks");
+		ItemStack acaciap = CI.createItem(Material.WOOD, 1, 4, ChatColor.RED + "Acacia Wood Planks");
+		ItemStack darkoakp = CI.createItem(Material.WOOD, 1, 5, ChatColor.BLACK + "Dark Oak Wood Planks");
+
 		ItemStack backToSettings = CI.createItem(Material.WOOD_DOOR, 1, -1, ChatColor.GOLD + "Settings", ChatColor.GRAY + "Click here to go back to settings!");
 		ItemStack close = CI.createItem(Material.REDSTONE_BLOCK, 1, -1, ChatColor.RED + "Close", ChatColor.GRAY + "Click here to close a menu!");
 		ItemStack next = Skulls.getSkull("MHF_ArrowRight", 1, ChatColor.BLACK + "Next Page", ChatColor.GRAY + "Go to the next page!");
-		ItemStack prev = Skulls.getSkull("MHF_Arrowleft", 1, ChatColor.BLACK + "Previous Page", ChatColor.GRAY + "Go to the previous page!");
-		
-		i.setItem(45, prev);
-		i.setItem(49, backToSettings);
-		i.setItem(50, close);
-		i.setItem(53, next);
-		p.openInventory(i);
+		ItemStack back = Skulls.getSkull("MHF_Arrowleft", 1, ChatColor.BLACK + "Previous Page", ChatColor.GRAY + "Go to the previous page!");
+		ItemStack info = CI.createItem(Material.SIGN_POST, 1, -1, ChatColor.GOLD + "Info", ChatColor.GRAY + "This is the menu for wood types.");
+
+		w.setItem(0, info);
+		w.setItem(10, oak);
+		w.setItem(12, spruce);
+		w.setItem(14, birch);
+		w.setItem(16, jungle);
+		w.setItem(20, acacia);
+		w.setItem(22, darkoak);
+		w.setItem(24, acaciap);
+		w.setItem(29, darkoakp);
+		w.setItem(31, oakp);
+		w.setItem(33, sprucep);
+		w.setItem(39, birchp);
+		w.setItem(41, junglep);
+		w.setItem(45, back);
+		w.setItem(49, backToSettings);
+		w.setItem(50, close);
+		w.setItem(53, next);
+		p.openInventory(w);
 	}
 	
 	public static void openArmor(User p) {
-		Inventory i = Bukkit.createInventory(null,  54, ChatColor.GOLD.toString() + ChatColor.BOLD + "Armor");
+		Inventory i = Bukkit.createInventory(null,  54, ChatColor.GOLD.toString() + ChatColor.BOLD + "Hats Page 3/8");
 		
 		ItemStack lh = CI.createItem(Material.LEATHER_HELMET, 1, -1, ChatColor.YELLOW + "Leather Helmet");
 		ItemStack lc = CI.createItem(Material.LEATHER_CHESTPLATE, 1, -1, ChatColor.YELLOW + "Leather Chestplate");
@@ -110,8 +138,17 @@ public class LGUI {
 		
 		ItemStack backToSettings = CI.createItem(Material.WOOD_DOOR, 1, -1, ChatColor.GOLD + "Settings", ChatColor.GRAY + "Click here to go back to settings!");
 		ItemStack close = CI.createItem(Material.REDSTONE_BLOCK, 1, -1, ChatColor.RED + "Close", ChatColor.GRAY + "Click here to close a menu!");
-		ItemStack disco = CI.createItem(Material.INK_SACK, 1, 0, ChatColor.DARK_PURPLE + "Disco Armor", ChatColor.GRAY + "Click here to use disco armor (Leather armor only)");
-		
+		ItemStack disco;
+		if (Disco.hasDisco(p)) {
+			disco = CI.createItem(Material.SLIME_BLOCK, 1, 0, ChatColor.DARK_PURPLE + "Disco Armor", ChatColor.GRAY + "Click here to disable disco armor.");
+		} else {
+			disco = CI.createItem(Material.COAL_BLOCK, 1, 0, ChatColor.DARK_PURPLE + "Disco Armor", ChatColor.GRAY + "Click here to enable disco armor (Leather armor only).");
+		}
+		ItemStack next = Skulls.getSkull("MHF_ArrowRight", 1, ChatColor.BLACK + "Next Page", ChatColor.GRAY + "Go to the next page!");
+		ItemStack back = Skulls.getSkull("MHF_Arrowleft", 1, ChatColor.BLACK + "Previous Page", ChatColor.GRAY + "Go to the previous page");
+		ItemStack info = CI.createItem(Material.SIGN_POST, 1, -1, ChatColor.GOLD + "Info", ChatColor.GRAY + "This is the menu for armor.");
+
+		i.setItem(0, info);
 		i.setItem(9, lh);
 		i.setItem(18, lc);
 		i.setItem(27, ll);
@@ -136,10 +173,77 @@ public class LGUI {
 		i.setItem(26, dc);
 		i.setItem(35, dl);
 		i.setItem(44, db);
-		
-		i.setItem(50, close);
-		i.setItem(49, backToSettings);
+
+		i.setItem(45, back);
 		i.setItem(48, disco);
+		i.setItem(49, backToSettings);
+		i.setItem(50, close);
+		i.setItem(53, next);
 		p.openInventory(i);
+	}
+
+	public static void openBlockTypes(User p) {
+		Inventory i = Bukkit.createInventory(null, 45, ChatColor.GOLD.toString() + ChatColor.BOLD + "Hats Page 4/8");
+
+		ItemStack e = CI.createItem(Material.EMERALD_BLOCK, 1, -1, ChatColor.DARK_GREEN + "Emerald Block");
+		ItemStack d = CI.createItem(Material.DIAMOND_BLOCK, 1, -1, ChatColor.DARK_AQUA + "Diamond Block");
+		ItemStack g = CI.createItem(Material.GOLD_BLOCK, 1, -1, ChatColor.GOLD + "Gold Block");
+		ItemStack r = CI.createItem(Material.REDSTONE_BLOCK, 1, -1, ChatColor.RED + "Redstone Block");
+		ItemStack ir = CI.createItem(Material.IRON_BLOCK, 1, -1, ChatColor.WHITE + "Iron Block");
+		ItemStack l = CI.createItem(Material.LAPIS_BLOCK, 1, -1, ChatColor.DARK_BLUE + "Lapis Lazuli Block");
+		ItemStack c = CI.createItem(Material.COAL_BLOCK, 1, -1, ChatColor.BLACK + "Coal Block");
+
+		ItemStack backToSettings = CI.createItem(Material.WOOD_DOOR, 1, -1, ChatColor.GOLD + "Settings", ChatColor.GRAY + "Click here to go back to settings!");
+		ItemStack close = CI.createItem(Material.REDSTONE_BLOCK, 1, -1, ChatColor.RED + "Close", ChatColor.GRAY + "Click here to close a menu!");
+		ItemStack next = Skulls.getSkull("MHF_ArrowRight", 1, ChatColor.BLACK + "Next Page", ChatColor.GRAY + "Go to the next page!");
+		ItemStack back = Skulls.getSkull("MHF_Arrowleft", 1, ChatColor.BLACK + "Previous Page", ChatColor.GRAY + "Go to the previous page");
+		ItemStack info = CI.createItem(Material.SIGN_POST, 1, -1, ChatColor.GOLD + "Info", ChatColor.GRAY + "This is the menu for block types.");
+
+		i.setItem(0, info);
+		i.setItem(10, e);
+		i.setItem(12, d);
+		i.setItem(14, g);
+		i.setItem(16, r);
+		i.setItem(20, ir);
+		i.setItem(22, l);
+		i.setItem(24, c);
+		i.setItem(36, back);
+		i.setItem(40, backToSettings);
+		i.setItem(41, close);
+		i.setItem(44, next);
+		p.openInventory(i);
+	}
+
+	public static void openOreTypes(User p) {
+		Inventory o = Bukkit.createInventory(null, 45, ChatColor.GOLD.toString() + ChatColor.BOLD + "Hats Page 5/8");
+
+		ItemStack e = CI.createItem(Material.EMERALD_ORE, 1, -1, ChatColor.DARK_GREEN + "Emerald Ore");
+		ItemStack d = CI.createItem(Material.DIAMOND_ORE, 1, -1, ChatColor.DARK_AQUA + "Diamond Ore");
+		ItemStack g = CI.createItem(Material.GOLD_ORE, 1, -1, ChatColor.GOLD + "Gold Ore");
+		ItemStack i = CI.createItem(Material.IRON_ORE, 1, -1, ChatColor.WHITE + "Iron Ore");
+		ItemStack r = CI.createItem(Material.REDSTONE_ORE, 1, -1, ChatColor.RED + "Redstone Ore");
+		ItemStack l = CI.createItem(Material.LAPIS_ORE, 1, -1, ChatColor.DARK_BLUE + "Lapis Lazuli Ore");
+		ItemStack c = CI.createItem(Material.COAL_ORE, 1, -1, ChatColor.BLACK + "Coal Ore");
+
+		ItemStack backToSettings = CI.createItem(Material.WOOD_DOOR, 1, -1, ChatColor.GOLD + "Settings", ChatColor.GRAY + "Click here to go back to settings!");
+		ItemStack close = CI.createItem(Material.REDSTONE_BLOCK, 1, -1, ChatColor.RED + "Close", ChatColor.GRAY + "Click here to close a menu!");
+		ItemStack next = Skulls.getSkull("MHF_ArrowRight", 1, ChatColor.BLACK + "Next Page", ChatColor.GRAY + "Go to the next page!");
+		ItemStack back = Skulls.getSkull("MHF_Arrowleft", 1, ChatColor.BLACK + "Previous Page", ChatColor.GRAY + "Go to the previous page");
+		ItemStack info = CI.createItem(Material.SIGN_POST, 1, -1, ChatColor.GOLD + "Info", ChatColor.GRAY + "This is the menu for block types.");
+		//hats: skulls -> woodtypes -> armor -> blocktypes -> oretypes -> glass -> sand -> other
+
+		o.setItem(0, info);
+		o.setItem(10, e);
+		o.setItem(12, d);
+		o.setItem(14, g);
+		o.setItem(16, i);
+		o.setItem(20, r);
+		o.setItem(22, l);
+		o.setItem(24, c);
+		o.setItem(36, back);
+		o.setItem(40, backToSettings);
+		o.setItem(41, close);
+		o.setItem(44, next);
+		p.openInventory(o);
 	}
 }
