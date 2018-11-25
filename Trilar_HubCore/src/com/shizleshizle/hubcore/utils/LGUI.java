@@ -230,7 +230,6 @@ public class LGUI {
 		ItemStack next = Skulls.getSkull("MHF_ArrowRight", 1, ChatColor.BLACK + "Next Page", ChatColor.GRAY + "Go to the next page!");
 		ItemStack back = Skulls.getSkull("MHF_Arrowleft", 1, ChatColor.BLACK + "Previous Page", ChatColor.GRAY + "Go to the previous page");
 		ItemStack info = CI.createItem(Material.SIGN_POST, 1, -1, ChatColor.GOLD + "Info", ChatColor.GRAY + "This is the menu for block types.");
-		//hats: skulls -> woodtypes -> armor -> blocktypes -> oretypes -> glass -> sand -> other
 
 		o.setItem(0, info);
 		o.setItem(10, e);
@@ -245,5 +244,96 @@ public class LGUI {
 		o.setItem(41, close);
 		o.setItem(44, next);
 		p.openInventory(o);
+	}
+
+	public static void openGlassTypes(User p) {
+		Inventory inv = Bukkit.createInventory(null, 54, ChatColor.GOLD.toString() + ChatColor.BOLD + "Hats Page 6/8");
+
+		ItemStack neutral = CI.createItem(Material.GLASS, 1, -1, ChatColor.AQUA + "Glass");
+		ItemStack white = CI.createItem(Material.STAINED_GLASS, 1, 0, ChatColor.WHITE + "White Stained Glass");
+		ItemStack orange = CI.createItem(Material.STAINED_GLASS, 1, 1, ChatColor.GOLD + "Orange Stained Glass");
+		ItemStack magenta = CI.createItem(Material.STAINED_GLASS, 1, 2, ChatColor.LIGHT_PURPLE + "Magenta Stained Glass");
+		ItemStack lightblue = CI.createItem(Material.STAINED_GLASS, 1, 3, ChatColor.AQUA + "Light Blue Stained Glass");
+		ItemStack yellow = CI.createItem(Material.STAINED_GLASS, 1, 4, ChatColor.YELLOW + "Yellow Stained Glass");
+		ItemStack lime = CI.createItem(Material.STAINED_GLASS, 1, 5, ChatColor.GREEN + "Lime Stained Glass");
+		ItemStack pink = CI.createItem(Material.STAINED_GLASS, 1, 6, ChatColor.LIGHT_PURPLE + "Pink Stained Glass");
+		ItemStack darkgray = CI.createItem(Material.STAINED_GLASS, 1, 7, ChatColor.DARK_GRAY + "Dark Gray Stained Glass");
+		ItemStack lightgray = CI.createItem(Material.STAINED_GLASS, 1, 8, ChatColor.GRAY + "Gray Stained Glass");
+		ItemStack cyan = CI.createItem(Material.STAINED_GLASS, 1, 9, ChatColor.DARK_AQUA + "Cyan Stained Glass");
+		ItemStack purple = CI.createItem(Material.STAINED_GLASS, 1, 10, ChatColor.DARK_PURPLE + "Purple Stained Glass");
+		ItemStack blue = CI.createItem(Material.STAINED_GLASS, 1, 11, ChatColor.DARK_BLUE + "Blue Stained Glass");
+		ItemStack brown = CI.createItem(Material.STAINED_GLASS, 1, 12, ChatColor.DARK_GRAY + "Brown Stained Glass");
+		ItemStack green = CI.createItem(Material.STAINED_GLASS, 1, 13, ChatColor.DARK_GREEN + "Green Stained Glass");
+		ItemStack red = CI.createItem(Material.STAINED_GLASS, 1, 14, ChatColor.RED + "Red Stained Glass");
+		ItemStack black = CI.createItem(Material.STAINED_GLASS, 1, 15, ChatColor.BLACK + "Black Stained Glass");
+
+		ItemStack backToSettings = CI.createItem(Material.WOOD_DOOR, 1, -1, ChatColor.GOLD + "Settings", ChatColor.GRAY + "Click here to go back to settings!");
+		ItemStack close = CI.createItem(Material.REDSTONE_BLOCK, 1, -1, ChatColor.RED + "Close", ChatColor.GRAY + "Click here to close a menu!");
+		ItemStack next = Skulls.getSkull("MHF_ArrowRight", 1, ChatColor.BLACK + "Next Page", ChatColor.GRAY + "Go to the next page!");
+		ItemStack back = Skulls.getSkull("MHF_Arrowleft", 1, ChatColor.BLACK + "Previous Page", ChatColor.GRAY + "Go to the previous page");
+		ItemStack info = CI.createItem(Material.SIGN_POST, 1, -1, ChatColor.GOLD + "Info", ChatColor.GRAY + "This is the menu for block types.");
+
+		inv.setItem(0, neutral);
+		inv.setItem(2, white);
+		inv.setItem(4, orange);
+		inv.setItem(6, magenta);
+		inv.setItem(8, lightblue);
+		inv.setItem(10, yellow);
+		inv.setItem(12, lime);
+		inv.setItem(14, pink);
+		inv.setItem(16, darkgray);
+		inv.setItem(20, lightgray);
+		inv.setItem(22, cyan);
+		inv.setItem(24, purple);
+		inv.setItem(30, blue);
+		inv.setItem(32, brown);
+		inv.setItem(38, green);
+		inv.setItem(40, red);
+		inv.setItem(42, black);
+
+		inv.setItem(45, back);
+		inv.setItem(48, info);
+		inv.setItem(49, backToSettings);
+		inv.setItem(50, close);
+		inv.setItem(53, next);
+		p.openInventory(inv);
+	}
+
+	public static void openSandTypes(User p) {
+		Inventory s = Bukkit.createInventory(null, 36, ChatColor.GOLD.toString() + ChatColor.BOLD + "Sand Types");
+
+		ItemStack sand = CI.createItem(Material.SAND, 1, 0, ChatColor.YELLOW + "Sand"); // normal
+		ItemStack sstone = CI.createItem(Material.SANDSTONE, 1, 0, ChatColor.YELLOW + "Sandstone"); // sandstone
+		ItemStack sc = CI.createItem(Material.SANDSTONE, 1, 1, ChatColor.YELLOW + "Chiselled Sandstone"); // chiselled
+		ItemStack ssm = CI.createItem(Material.SANDSTONE, 1, 2, ChatColor.YELLOW + "Smooth Sandstone"); // smooth
+		ItemStack rsand = CI.createItem(Material.SAND, 1, 1, ChatColor.RED + "Red Sand"); // red sand
+		ItemStack rs = CI.createItem(Material.RED_SANDSTONE, 1, 0, ChatColor.RED + "Red Sandstone"); // red sandstone
+		ItemStack rsc = CI.createItem(Material.RED_SANDSTONE, 1, 1, ChatColor.RED + "Red Chiselled Sandstone"); // red chiselled
+		ItemStack rsm = CI.createItem(Material.RED_SANDSTONE, 1, 2, ChatColor.RED + "Smooth Red Sandstone"); // smooth
+		ItemStack ss = CI.createItem(Material.SOUL_SAND, 1, -1, ChatColor.DARK_GRAY + "Soul Sand");
+
+		ItemStack backToSettings = CI.createItem(Material.WOOD_DOOR, 1, -1, ChatColor.GOLD + "Settings", ChatColor.GRAY + "Click here to go back to settings!");
+		ItemStack close = CI.createItem(Material.REDSTONE_BLOCK, 1, -1, ChatColor.RED + "Close", ChatColor.GRAY + "Click here to close a menu!");
+		ItemStack next = Skulls.getSkull("MHF_ArrowRight", 1, ChatColor.BLACK + "Next Page", ChatColor.GRAY + "Go to the next page!");
+		ItemStack back = Skulls.getSkull("MHF_Arrowleft", 1, ChatColor.BLACK + "Previous Page", ChatColor.GRAY + "Go to the previous page");
+		ItemStack info = CI.createItem(Material.SIGN_POST, 1, -1, ChatColor.GOLD + "Info", ChatColor.GRAY + "This is the menu for block types.");
+		//hats: skulls -> woodtypes -> armor -> blocktypes -> oretypes -> glass -> sand -> other
+
+		s.setItem(0, sand);
+		s.setItem(10, sstone);
+		s.setItem(20, sc);
+		s.setItem(30, ssm);
+		s.setItem(8, rsand);
+		s.setItem(16, rs);
+		s.setItem(24, rsc);
+		s.setItem(32, rsm);
+		s.setItem(22, ss);
+
+		s.setItem(27, back);
+		s.setItem(30, info);
+		s.setItem(31, backToSettings);
+		s.setItem(32, close);
+		s.setItem(35, next);
+		p.openInventory(s);
 	}
 }

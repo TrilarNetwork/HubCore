@@ -336,7 +336,7 @@ public class InvClick implements Listener {
 					p.closeInventory();
 				} else if (ChatColor.stripColor(i.getItemMeta().getDisplayName()).equals("Next Page")) {
 					p.closeInventory();
-					//LGUI.openGlassTypes(p);
+					LGUI.openGlassTypes(p);
 					// oretypes -> glasstypes
 				} else if (ChatColor.stripColor(i.getItemMeta().getDisplayName()).equals("Previous Page")) {
 					p.closeInventory();
@@ -345,8 +345,140 @@ public class InvClick implements Listener {
 				}
 			} else if (ChatColor.stripColor(e.getClickedInventory().getTitle()).equals("Hats Page 6/8")) {
 				e.setCancelled(true);
+				if (i.getType() == Material.GLASS) {
+					p.closeInventory();
+					p.setHat(CI.createItem(Material.GLASS, 1, -1, ChatColor.AQUA + "Glass"));
+					p.sendMessage(ChatColor.GOLD + "Enjoy!");
+				} else if (ChatColor.stripColor(i.getItemMeta().getDisplayName()).startsWith("White")) {
+					p.closeInventory();
+					p.setHat(CI.createItem(Material.STAINED_GLASS, 1, 0, ChatColor.WHITE + "White Stained Glass"));
+					p.sendMessage(ChatColor.GOLD + "Enjoy!");
+				} else if (ChatColor.stripColor(i.getItemMeta().getDisplayName()).startsWith("Orange")) {
+					p.closeInventory();
+					p.setHat(CI.createItem(Material.STAINED_GLASS, 1, 1, ChatColor.GOLD + "Orange Stained Glass"));
+					p.sendMessage(ChatColor.GOLD + "Enjoy!");
+				} else if (ChatColor.stripColor(i.getItemMeta().getDisplayName()).startsWith("Magenta")) {
+					p.closeInventory();
+					p.setHat(CI.createItem(Material.STAINED_GLASS, 1, 2, ChatColor.LIGHT_PURPLE + "Magenta Stained Glass"));
+					p.sendMessage(ChatColor.GOLD + "Enjoy!");
+				} else if (ChatColor.stripColor(i.getItemMeta().getDisplayName()).startsWith("Light Blue")) {
+					p.closeInventory();
+					p.setHat(CI.createItem(Material.STAINED_GLASS, 1, 3, ChatColor.AQUA + "Light Blue Stained Glass"));
+					p.sendMessage(ChatColor.GOLD + "Enjoy!");
+				} else if (ChatColor.stripColor(i.getItemMeta().getDisplayName()).startsWith("Yellow")) {
+					p.closeInventory();
+					p.setHat(CI.createItem(Material.STAINED_GLASS, 1, 4, ChatColor.YELLOW + "Yellow Stained Glass"));
+					p.sendMessage(ChatColor.GOLD + "Enjoy!");
+				} else if (ChatColor.stripColor(i.getItemMeta().getDisplayName()).startsWith("Lime")) {
+					p.closeInventory();
+					p.setHat(CI.createItem(Material.STAINED_GLASS, 1, 5, ChatColor.GREEN + "Lime Stained Glass"));
+					p.sendMessage(ChatColor.GOLD + "Enjoy!");
+				} else if (ChatColor.stripColor(i.getItemMeta().getDisplayName()).startsWith("Pink")) {
+					p.closeInventory();
+					p.setHat(CI.createItem(Material.STAINED_GLASS, 1, 6, ChatColor.LIGHT_PURPLE + "Pink Stained Glass"));
+					p.sendMessage(ChatColor.GOLD + "Enjoy!");
+				} else if (ChatColor.stripColor(i.getItemMeta().getDisplayName()).startsWith("Dark Gray")) {
+					p.closeInventory();
+					p.setHat(CI.createItem(Material.STAINED_GLASS, 1, 7, ChatColor.DARK_GRAY + "Dark Gray Stained Glass"));
+					p.sendMessage(ChatColor.GOLD + "Enjoy!");
+				} else if (ChatColor.stripColor(i.getItemMeta().getDisplayName()).startsWith("Gray")) {
+					p.closeInventory();
+					p.setHat(CI.createItem(Material.STAINED_GLASS, 1, 8, ChatColor.GRAY + "Gray Stained Glass"));
+					p.sendMessage(ChatColor.GOLD + "Enjoy!");
+				} else if (ChatColor.stripColor(i.getItemMeta().getDisplayName()).startsWith("Cyan")) {
+					p.closeInventory();
+					p.setHat(CI.createItem(Material.STAINED_GLASS, 1, 9, ChatColor.DARK_AQUA + "Cyan Stained Glass"));
+					p.sendMessage(ChatColor.GOLD + "Enjoy!");
+				} else if (ChatColor.stripColor(i.getItemMeta().getDisplayName()).startsWith("Purple")) {
+					p.closeInventory();
+					p.setHat(CI.createItem(Material.STAINED_GLASS, 1, 10, ChatColor.DARK_PURPLE + "Purple Stained Glass"));
+					p.sendMessage(ChatColor.GOLD + "Enjoy!");
+				} else if (ChatColor.stripColor(i.getItemMeta().getDisplayName()).startsWith("Blue")) {
+					p.closeInventory();
+					p.setHat(CI.createItem(Material.STAINED_GLASS, 1, 11, ChatColor.DARK_BLUE + "Blue Stained Glass"));
+					p.sendMessage(ChatColor.GOLD + "Enjoy!");
+				} else if (ChatColor.stripColor(i.getItemMeta().getDisplayName()).startsWith("Brown")) {
+					p.closeInventory();
+					p.setHat(CI.createItem(Material.STAINED_GLASS, 1, 12, ChatColor.DARK_GRAY + "Brown Stained Glass"));
+					p.sendMessage(ChatColor.GOLD + "Enjoy!");
+				} else if (ChatColor.stripColor(i.getItemMeta().getDisplayName()).startsWith("Green")) {
+					p.closeInventory();
+					p.setHat(CI.createItem(Material.STAINED_GLASS, 1, 13, ChatColor.DARK_GREEN + "Green Stained Glass"));
+					p.sendMessage(ChatColor.GOLD + "Enjoy!");
+				} else if (ChatColor.stripColor(i.getItemMeta().getDisplayName()).startsWith("Red")) {
+					p.closeInventory();
+					p.setHat(CI.createItem(Material.STAINED_GLASS, 1, 14, ChatColor.RED + "Red Stained Glass"));
+					p.sendMessage(ChatColor.GOLD + "Enjoy!");
+				} else if (ChatColor.stripColor(i.getItemMeta().getDisplayName()).startsWith("Black")) {
+					p.closeInventory();
+					p.setHat(CI.createItem(Material.STAINED_GLASS, 1, 15, ChatColor.BLACK + "Black Stained Glass"));
+					p.sendMessage(ChatColor.GOLD + "Enjoy!");
+				} else if (i.getType() == Material.WOOD_DOOR) {
+					p.closeInventory();
+					LGUI.openSettings(p);
+				} else if (i.getType() == Material.REDSTONE_BLOCK) {
+					p.closeInventory();
+				} else if (ChatColor.stripColor(i.getItemMeta().getDisplayName()).equals("Next Page")) {
+					p.closeInventory();
+					LGUI.openSandTypes(p);
+					// glasstypes -> sand
+				} else if (ChatColor.stripColor(i.getItemMeta().getDisplayName()).equals("Previous Page")) {
+					p.closeInventory();
+					LGUI.openOreTypes(p);
+					// glasstypes -> oretypes
+				}
 			} else if (ChatColor.stripColor(e.getClickedInventory().getTitle()).equals("Hats Page 7/8")) {
 				e.setCancelled(true);
+				if (i.getType() == Material.SAND) {
+					p.closeInventory();
+					p.setHat(CI.createItem(Material.SAND, 1, 0, ChatColor.YELLOW + "Sand"));
+					p.sendMessage(ChatColor.GOLD + "Enjoy!");
+				} else if (ChatColor.stripColor(i.getItemMeta().getDisplayName()).equals("Sandstone")) {
+					p.closeInventory();
+					p.setHat(CI.createItem(Material.SANDSTONE, 1, 0, ChatColor.YELLOW + "Sandstone"));
+					p.sendMessage(ChatColor.GOLD + "Enjoy!");
+				} else if (ChatColor.stripColor(i.getItemMeta().getDisplayName()).startsWith("Chiselled")) {
+					p.closeInventory();
+					p.setHat(CI.createItem(Material.SANDSTONE, 1, 1, ChatColor.YELLOW + "Chiselled Sandstone"));
+					p.sendMessage(ChatColor.GOLD + "Enjoy!");
+				} else if (ChatColor.stripColor(i.getItemMeta().getDisplayName()).startsWith("Smooth")) {
+					p.closeInventory();
+					p.setHat(CI.createItem(Material.SANDSTONE, 1, 2, ChatColor.YELLOW + "Smooth Sandstone"));
+					p.sendMessage(ChatColor.GOLD + "Enjoy!");
+				} else if (ChatColor.stripColor(i.getItemMeta().getDisplayName()).startsWith("Red")) {
+					p.closeInventory();
+					p.setHat(CI.createItem(Material.SAND, 1, 1, ChatColor.RED + "Red Sand"));
+					p.sendMessage(ChatColor.GOLD + "Enjoy!");
+				} else if (ChatColor.stripColor(i.getItemMeta().getDisplayName()).equals("Red Sandstone")) {
+					p.closeInventory();
+					p.setHat(CI.createItem(Material.RED_SANDSTONE, 1, 0, ChatColor.RED + "Red Sandstone"));
+					p.sendMessage(ChatColor.GOLD + "Enjoy!");
+				} else if (ChatColor.stripColor(i.getItemMeta().getDisplayName()).startsWith("Red Chiselled")) {
+					p.closeInventory();
+					p.setHat(CI.createItem(Material.RED_SANDSTONE, 1, 1, ChatColor.RED + "Red Chiselled Sandstone"));
+					p.sendMessage(ChatColor.GOLD + "Enjoy!");
+				} else if (ChatColor.stripColor(i.getItemMeta().getDisplayName()).startsWith("Smooth Red")) {
+					p.closeInventory();
+					p.setHat(CI.createItem(Material.RED_SANDSTONE, 1, 2, ChatColor.RED + "Smooth Red Sandstone"));
+					p.sendMessage(ChatColor.GOLD + "Enjoy!");
+				} else if (ChatColor.stripColor(i.getItemMeta().getDisplayName()).startsWith("Soul")) {
+					p.closeInventory();
+					p.setHat(CI.createItem(Material.SOUL_SAND, 1, -1, ChatColor.DARK_GRAY + "Soul Sand"));
+					p.sendMessage(ChatColor.GOLD + "Enjoy!");
+				} else if (i.getType() == Material.WOOD_DOOR) {
+					p.closeInventory();
+					LGUI.openSettings(p);
+				} else if (i.getType() == Material.REDSTONE_BLOCK) {
+					p.closeInventory();
+				} else if (ChatColor.stripColor(i.getItemMeta().getDisplayName()).equals("Next Page")) {
+					p.closeInventory();
+					//LGUI.openOther(p);
+					// sand -> other
+				} else if (ChatColor.stripColor(i.getItemMeta().getDisplayName()).equals("Previous Page")) {
+					p.closeInventory();
+					LGUI.openOreTypes(p);
+					// sand -> glasstypes
+				}
 			} else if (ChatColor.stripColor(e.getClickedInventory().getTitle()).equals("Hats Page 8/8")) {
 				e.setCancelled(true);
 			}
