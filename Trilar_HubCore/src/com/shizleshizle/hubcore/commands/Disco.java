@@ -18,7 +18,7 @@ import org.bukkit.inventory.PlayerInventory;
 import java.util.ArrayList;
 public class Disco implements CommandExecutor {
 	private static ArrayList<String> disco = new ArrayList<>();
-	private static String prefix = ChatColor.YELLOW.toString() + ChatColor.BOLD + "Disco" + ChatColor.GOLD + " >> " + ChatColor.YELLOW;
+	private static final String PREFIX = ChatColor.YELLOW.toString() + ChatColor.BOLD + "Disco" + ChatColor.GOLD + " >> " + ChatColor.YELLOW;
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if (cmd.getName().equalsIgnoreCase("disco")) {
@@ -29,15 +29,15 @@ public class Disco implements CommandExecutor {
 					if (args.length == 0) {
 						if (hasDisco(p)) {
 							setDisco(p, false);
-							p.sendMessage(prefix + "Your disco armor has been disabled!");
+							p.sendMessage(PREFIX + "Your disco armor has been disabled!");
 						} else {
 							PlayerInventory inv = p.getInventory();
 							if (inv.contains(Material.LEATHER_BOOTS) || inv.contains(Material.LEATHER_CHESTPLATE) || inv.contains(Material.LEATHER_HELMET)
 									|| inv.contains(Material.LEATHER_LEGGINGS)) {
 								setDisco(p, true);
-								p.sendMessage(prefix + "Groovy! Enjoy your disco armor!");
+								p.sendMessage(PREFIX + "Groovy! Enjoy your disco armor!");
 							} else {
-								p.sendMessage(prefix + "Disco armor only works on leather.");
+								p.sendMessage(PREFIX + "Disco armor only works on leather.");
 							}
 						}
 					} else if (args.length == 1) {
@@ -46,17 +46,17 @@ public class Disco implements CommandExecutor {
 							User t = new User(tp);
 							if (hasDisco(t)) {
 								setDisco(t, false);
-								t.sendMessage(prefix + "Your disco armor has been disabled!");
-								p.sendMessage(prefix + "You have disabled " + ChatColor.YELLOW + args[0] + ChatColor.GOLD + "'s disco armor!");
+								t.sendMessage(PREFIX + "Your disco armor has been disabled!");
+								p.sendMessage(PREFIX + "You have disabled " + ChatColor.YELLOW + args[0] + ChatColor.GOLD + "'s disco armor!");
 							} else {
 								PlayerInventory inv = t.getInventory();
 								if (inv.contains(Material.LEATHER_BOOTS) || inv.contains(Material.LEATHER_CHESTPLATE) || inv.contains(Material.LEATHER_HELMET)
 										|| inv.contains(Material.LEATHER_LEGGINGS)) {
 									setDisco(t, true);
-									t.sendMessage(prefix + "Groovy! Enjoy your disco armor!");
-									p.sendMessage(prefix + "You have enabled " + ChatColor.YELLOW + args[0] + ChatColor.GOLD + "'s disco armor!");
+									t.sendMessage(PREFIX + "Groovy! Enjoy your disco armor!");
+									p.sendMessage(PREFIX + "You have enabled " + ChatColor.YELLOW + args[0] + ChatColor.GOLD + "'s disco armor!");
 								} else {
-									p.sendMessage(prefix + "Disco armor only works on leather.");
+									p.sendMessage(PREFIX + "Disco armor only works on leather.");
 								}
 							}
 						} else {

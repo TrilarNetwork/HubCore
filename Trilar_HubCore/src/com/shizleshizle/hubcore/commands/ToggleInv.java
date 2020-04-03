@@ -16,7 +16,7 @@ import me.shizleshizle.core.utils.ErrorMessages;
 import me.shizleshizle.core.utils.ErrorMessages.Messages;
 
 public class ToggleInv implements CommandExecutor {
-	private static String prefix = ChatColor.YELLOW.toString() + ChatColor.BOLD + "Lobby Inventory" + ChatColor.GOLD + " >> " + ChatColor.YELLOW;
+	private static final String PREFIX = ChatColor.YELLOW.toString() + ChatColor.BOLD + "Lobby Inventory" + ChatColor.GOLD + " >> " + ChatColor.YELLOW;
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if (cmd.getName().equalsIgnoreCase("toggleinv")) {
@@ -27,10 +27,10 @@ public class ToggleInv implements CommandExecutor {
 					if (args.length == 0) {
 						if (LH.isDisabled(p)) {
 							LH.enableInventory(p);
-							p.sendMessage(prefix + "Your inventory has been enabled!");
+							p.sendMessage(PREFIX + "Your inventory has been enabled!");
 						} else {
 							LH.disableInventory(p);
-							p.sendMessage(prefix + "Your inventory has been disabled!");
+							p.sendMessage(PREFIX + "Your inventory has been disabled!");
 						}
 					} else if (args.length == 1) {
 						Player p2 = Bukkit.getPlayerExact(args[0]);
@@ -38,12 +38,12 @@ public class ToggleInv implements CommandExecutor {
 							User t = new User(p2);
 							if (LH.isDisabled(t)) {
 								LH.enableInventory(t);
-								p.sendMessage(prefix + "You have enabled " + ChatColor.GOLD + t.getName() + ChatColor.YELLOW + "'s inventory!");
-								t.sendMessage(prefix + "Your inventory has been enabled by " + ChatColor.GOLD + p.getName() + ChatColor.YELLOW + "!");
+								p.sendMessage(PREFIX + "You have enabled " + ChatColor.GOLD + t.getName() + ChatColor.YELLOW + "'s inventory!");
+								t.sendMessage(PREFIX + "Your inventory has been enabled by " + ChatColor.GOLD + p.getName() + ChatColor.YELLOW + "!");
 							} else {
 								LH.disableInventory(t);
-								p.sendMessage(prefix + "You have disabled " + ChatColor.GOLD + t.getName() + ChatColor.YELLOW + "'s inventory!");
-								t.sendMessage(prefix + "Your inventory has been disabled by " + ChatColor.GOLD + p.getName() + ChatColor.YELLOW + "!");
+								p.sendMessage(PREFIX + "You have disabled " + ChatColor.GOLD + t.getName() + ChatColor.YELLOW + "'s inventory!");
+								t.sendMessage(PREFIX + "Your inventory has been disabled by " + ChatColor.GOLD + p.getName() + ChatColor.YELLOW + "!");
 							}
 						} else {
 							ErrorMessages.doErrorMessage(p, Messages.PLAYER_OFFLINE, args[0]);
